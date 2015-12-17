@@ -8,19 +8,22 @@
   </head>
   <body ng-app="searchApp" ng-controller="MainCtrl" class="text-center">
     <h1><%= title %></h1>
+    <em>by Nicholas Neumann-Chun</em>
     <hr>
     <input type="text" ng-model="query">
     <button ng-click="search(query)">Search</button>
-    
+
     <table class="table table-bordered text-left">
       <thead>
         <th>Title</th>
         <th>Url</th>
+        <th>Rank</th>
       </thead>
       <tbody>
         <tr ng-repeat="r in results">
           <td>{{r.title}}</td>
           <td>{{r.url}}</td>
+          <td>{{r.rank}}</td>
         </tr>
       </tbody>
     </table>
