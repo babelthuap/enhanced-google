@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "setup": "rm -rf ./node_modules ./public/vendor && npm install && bower install",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "postinstall": "bower install"
   },
   "engines": {
     "node": "5.2.0"
