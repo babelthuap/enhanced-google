@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "setup": "npm i",
+    "setup": "rm -rf ./node_modules ./public/vendor && npm install && bower install",
     "start": "node ./bin/www",
-    "postinstall": "bower i"
+    "postinstall": "bower install"
   },
   "engines": {
     "node": "5.2.0"
