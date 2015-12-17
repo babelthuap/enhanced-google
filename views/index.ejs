@@ -20,10 +20,10 @@
         <th>Rank</th>
       </thead>
       <tbody>
-        <tr ng-repeat="r in results">
+        <tr ng-repeat="r in results | orderBy:'-rank'">
           <td>{{r.title}}</td>
           <td>{{r.url}}</td>
-          <td>{{r.rank}}</td>
+          <td>{{(r.rank * 10).toFixed(1)}}</td>
         </tr>
       </tbody>
     </table>
