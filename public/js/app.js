@@ -3,7 +3,7 @@
 var app = angular.module('searchApp', []);
 
 app.controller('MainCtrl', function($scope, $http) {
-  $scope.results = [];
+  $scope.results;
 
   $scope.search = function(query) {
     $http.get('/search/' + query)

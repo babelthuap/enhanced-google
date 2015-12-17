@@ -13,7 +13,7 @@
     <input type="text" ng-model="query">
     <button ng-click="search(query)">Search</button>
 
-    <table class="table table-bordered text-left">
+    <table class="table table-bordered text-left" ng-show="results">
       <thead>
         <th>Title</th>
         <th>Url</th>
@@ -22,7 +22,7 @@
       <tbody>
         <tr ng-repeat="r in results | orderBy:'-rank'">
           <td>{{r.title}}</td>
-          <td>{{r.url}}</td>
+          <td><a href={{r.url}}>{{r.url}}</a></td>
           <td>{{(r.rank * 10).toFixed(1)}}</td>
         </tr>
       </tbody>
