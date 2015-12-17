@@ -58,15 +58,20 @@ router.get('/:query', function(req, res) {
   });
 
   Promise.all([google, bing]).then((links) => {
-    let googleUrls = links[0].map(link => link.url.replace(/https/g, 'http'));
-    let results = links[0];
+    let googleUrls = links[0].map(link => link.url.replace(/https?:\/\/(www\.)?/g, ''));
+    let results = links[0].map(link => {
+      link.rank /= 2;
+      return link;
+    });
 
     // combine the two searches, averaging ranks of matching urls
     links[1].forEach(link => {
-      let matchIndex = googleUrls.indexOf(link.url.replace(/https/g, 'http'));
+      let matchIndex = googleUrls.indexOf(link.url.replace(/https?:\/\/(www\.)?/g, ''));
       if (matchIndex === -1) {
+        link.rank /= 2;
         results.push(link);
       } else {
+        results[matchIndex].rank *= 2
         results[matchIndex].rank += link.rank;
         results[matchIndex].rank /= 2;
       }
