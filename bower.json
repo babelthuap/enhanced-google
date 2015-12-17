@@ -1,0 +1,19 @@
+{
+  "name": "enhanced-google",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Nicholas Neumann-Chun <nicholas.babelthuap (at) gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/babelthuap/enhanced-google",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/vendor",
+    "test",
+    "tests"
+  ]
+}
