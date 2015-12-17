@@ -1,8 +1,8 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+button {
+  margin-bottom: 1em;
 }
 
-a {
-  color: #00B7FF;
+.table {
+  width: 81%;
+  margin: auto;
 }

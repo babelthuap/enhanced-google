@@ -2,11 +2,29 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel='stylesheet' href='/css/style.css' />
-    <script src=""></script>
+    <script src="/vendor/angular/angular.min.js"></script>
   </head>
-  <body>
+  <body ng-app="searchApp" ng-controller="MainCtrl" class="text-center">
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <hr>
+    <input type="text" ng-model="query">
+    <button ng-click="search(query)">Search</button>
+    
+    <table class="table table-bordered text-left">
+      <thead>
+        <th>Title</th>
+        <th>Url</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="r in results">
+          <td>{{r.title}}</td>
+          <td>{{r.url}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="/js/app.js"></script>
   </body>
 </html>
